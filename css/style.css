@@ -1,0 +1,203 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+:root {
+    --veryDarkBlue: hsl(233, 47%, 7%); /*(main background)*/
+    --softViolet: rgba(170, 92, 219, 0.5); /*(accent)*/
+    --softVioletText: rgba(170, 92, 219, 0.8);
+    --purple: hsla(300, 100%, 25%, 0.5);
+    --darkDesaturatedBlue: hsl(244, 38%, 16%); /*(card background)*/
+    --white: hsl(0, 0%, 100%); /*(main heading, stats)*/
+    --slightlyTransparentWhite: hsla(0, 0%, 100%, 0.75); /*(main paragraph)*/
+    --slightlyTransparentWhite: hsla(0, 0%, 100%, 0.6); /*(stat headings)*/
+    --colorText: #fff;
+    --colorGreyText: hsla(0, 0%, 100%, 0.7);
+    --exSmall: 1rem;
+    --small: 2rem;
+    --medium: 3rem;
+    --big: 4rem;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--veryDarkBlue);
+    font-size: 1.5rem;
+    color: var(--colorText);
+    padding: var(--medium) 0;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.image-box {
+    display: none;
+}
+
+/*.....*/
+
+/* CARD CONTAINER*/
+.card-box {
+    background-color: var(--darkDesaturatedBlue);
+    margin: 0 auto;
+    width: 90%;
+    max-width: 375px;
+    border-bottom-left-radius: var(--exSmall);
+    border-bottom-left-radius: var(--exSmall);  
+}
+
+/*PICTURE*/
+
+@media screen and (min-width: 320px) and (max-width: 1439px) {
+    .bg-image-box {
+        background-image: linear-gradient(to left, var(--softViolet), var(--purple)), url(../images/image-header-mobile.jpg);
+        height: 40vh;
+        background-size: cover;
+        background-repeat: repeat-x;
+        border-top-left-radius: var(--exSmall);
+        border-top-right-radius: var(--exSmall);
+        margin-bottom: var(--medium);
+    }   
+}
+
+/*header*/
+
+.text {
+    text-align: center;
+    max-width: 390px;
+    margin: 0 auto;
+}
+.text--main {
+    font-family: 'Inter', sans-serif; 
+    font-weight: 700;
+    margin: 0 auto;
+    width: 85%;
+    max-width: 411px;
+    margin-bottom: var(--medium);
+}
+
+span {
+    color: var(--softVioletText);
+}
+
+/*paragraph*/
+.text--sub {
+    color:var(--colorGreyText);
+    width: 80%;
+    max-width: 510px;
+    margin: 0 auto;
+    line-height: 1.6;
+    margin-bottom: var(--big);
+}
+
+
+/*stats*/
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats--item {
+    margin-bottom: var(--medium);
+    text-align: center;
+}
+
+.stats--title {
+    color:var(--colorGreyText);
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+
+/*LAPTOP VERSION*/
+@media screen and (min-width: 1440px) {
+    .image-box {
+        display: block; /*picture of the women*/
+        background-image: linear-gradient(to left, var(--softViolet), var(--purple)), url(../images/image-header-desktop.jpg);
+        height: 446px;
+        width: 500px;
+        background-repeat: no-repeat;
+        border-top-right-radius: var(--exSmall);
+        border-bottom-right-radius: var(--exSmall);
+    }
+
+    .bg-image-box {
+        display: none; /*bg container for mobile picture*/
+    }
+    
+    .text {
+        text-align: left;
+    }
+
+    .text--sub, .text--main {
+        margin-left: 0;
+    }
+
+    /* CARD CONTAINER*/
+    .card-box {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: var(--medium);
+        transform: translateY(80px);
+        height: 446px;
+        border-top-left-radius: var(--exSmall);
+        border-bottom-left-radius: var(--exSmall);
+        
+    }
+
+
+    .text {
+        transform: translateY(50px) translateX(60px);
+        margin-bottom: 8rem;
+        max-width: 500px;
+    }
+
+    .text--main {
+        font-size: 3.5rem;
+        
+    }
+
+    .text--sub {
+        line-height: 1.8;
+
+    }
+
+    .stats {
+        flex-direction: row;
+        justify-content: flex-start;
+        transform: translateX(60px);
+        max-width: 500px;
+    }
+
+    .stats-left {
+        margin-left: 2rem;
+    }
+
+    .stats--item {
+        text-align: left;
+    }
+
+
+    .stats--number {
+        margin: var(--exSmall);
+        font-size: 2.5rem;
+    }
+}
+
+
+
